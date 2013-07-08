@@ -5,5 +5,5 @@ PART4_COLOR = '#017794'
 
 PART1_TITLE = 'Part I: Essential Linux Commands'
 PART2_TITLE = 'Part II: Editors & Productivity'
-PART3_TITLE = 'Part III: Getting Ready for Software Development'
+PART3_TITLE = 'Part III: Getting Ready for Web Development'
 PART4_TITLE = 'Part IV: Advanced Tips & Tricks'
