@@ -113,21 +113,36 @@
         ## Part I: Essential Linux Commands
     </script>
 </section>
-<section data-markdown data-background="#9d6c5c">
-    <script type="text/template">
-        ## Prerequisites
+<section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Prerequisites
 
-        * Download & Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-        * Download & Install [Vagrant](http://downloads.vagrantup.com/)
-        * Download the [Vagrant box for this course](TODO)
-        * Install & start the vagrant box:
-        <pre><code data-trim class="bash">
-        $ vagrant box add precise32 /path/to/your/box
-        $ vagrant init lucid32
-        $ vagrant up 
-        $ vagrant ssh
-        </code></pre>
-    </script>
+            * Download & Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+            * Download & Install [Vagrant](http://downloads.vagrantup.com/)
+            * Download the [Vagrant box for this course](TODO)
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Excercise
+
+            * Install & start the downloaded vagrant box
+
+            <pre><code data-trim class="bash">
+            $ vagrant box add precise32 /path/to/your/downloaded/box
+            $ vagrant init precise32
+            $ vagrant up 
+            $ vagrant ssh
+            </code></pre>
+
+            * You should now see a new prompt:
+
+            <pre><code data-trim class="bash">
+            vagrant@precise32:~$
+            </code></pre>
+        </script>
+    </section>
 </section>
 <section data-markdown data-background="#9d6c5c">
     <script type="text/template">
