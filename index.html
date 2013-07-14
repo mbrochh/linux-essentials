@@ -144,16 +144,117 @@
         </script>
     </section>
 </section>
-<section data-markdown data-background="#9d6c5c">
-    <script type="text/template">
-        ## SSH
+<section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## SSH - "Secure Shell"
 
-        * SSH means "Secure Shell"
-        * [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell): "is a cryptographic network protocol for secure data communication"
-        * We use it to login to a remote server
-        * Standard port is 22
-        * You can create a key-pair for authentication
-    </script>
+            <a href="https://en.wikipedia.org/wiki/Secure_Shell"><blockquote cite="https://en.wikipedia.org/wiki/Secure_Shell">... is a cryptographic network protocol for secure data communication</blockquote></a>
+
+            * We use it to login to a remote server
+            * Standard port is 22
+            * You can create a key-pair for authentication
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Connect to a server
+
+            <pre><code data-trim class="bash">
+            $ ssh username@hostname
+            </code></pre>
+
+            * Add new server to `known_hosts`:
+
+            <pre><code data-trim class="text">
+            > The authenticity of host '[localhost]:2222 ([127.0.0.1]:2222)' can't be established.
+            > RSA key fingerprint is e6:ad:1e:ee:15:53:7d:a6:ee:7c:aa:04:7a:ad:9a:9a.
+            > Are you sure you want to continue connecting (yes/no)?
+            $ yes
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Generate your SSH key
+
+            <pre><code data-trim class="bash">
+            # on your machine
+
+            $ ssh-keygen -t rsa
+
+            > Generating public/private rsa key pair.
+            > Enter file in which to save the key (/home/vagrant/.ssh/id_rsa):
+            > Enter passphrase (empty for no passphrase):
+            > Enter same passphrase again:
+            > Your identification has been saved in /home/vagrant/.ssh/id_rsa.
+            > Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub.
+            > The key fingerprint is: 88:0a:cc:13:7c:ab:42:9b:ec:9b:a5:60:71:36:04:c1 vagrant@precise32
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Deploy your key on a server
+
+            <pre><code data-trim class="bash">
+            # on your server
+
+            $ mkdir -p ~/ssh
+            $ touch ~/.ssh/authorized_keys
+            $ chmod 600 ~/.ssh/authorized_keys
+            $ chmod 700 ~/.ssh
+            </code></pre>
+
+            <pre><code data-trim class="bash">
+            # on your machine
+
+            $ cat ~/.ssh/id_rsa.pub
+
+            # copy the output into your clipboard
+            </code></pre>
+
+            <pre><code data-trim class="bash">
+            # on your server
+
+            $ vi ~/.ssh/authorized_keys
+
+            # paste your key into the file
+
+            $ :wq
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Excercise
+
+            1. Create your own SSH key
+            2. Deploy your key on your Vagrant box
+            3. SSH into your box without entering a password
+
+            <br />
+
+            ### Hints:
+
+            <pre><code data-trim class="bash">
+            $ ssh-keygen -t rsa
+            $ cat ~/.ssh/id_rsa.pub
+            $ vagrant ssh
+            $ vi ~/.ssh/authorized_keys
+
+            # Some vi tips:
+            $ :set backspace=2
+            $ i  (insert mode)
+            $ ESC  (leave insert mode)
+            $ :wq  (write and quit)
+
+            $ exit  (leave vagrant box)
+
+            $ ssh vagrant@localhost -p 2222
+            </code></pre>
+        </script>
+    </section>
 </section>
 <section data-markdown data-background="#9d6c5c">
     <script type="text/template">
@@ -322,7 +423,15 @@
 </section>
 <section data-markdown data-background="#56815e">
     <script type="text/template">
-        ## Python & Debugging 
+        ## Python & Debugging
+
+        ### Install pip, mercurial and ipdb
+        <pre><code data-trim class="bash">
+        $ sudo apt-get install python-setuptools
+        $ sudo easy_install pip
+        $ sudo pip install mercurial
+        $ sudo pip install ipdb
+        </code></pre>
     </script>
 </section>
 <section data-markdown data-background="#56815e">
