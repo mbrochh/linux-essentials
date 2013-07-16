@@ -1,5 +1,61 @@
-<section data-markdown data-background="{{ PART1_COLOR }}">
-    <script type="text/template">
-        ## Autocomplete
-    </script>
+<section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Autocomplete
+
+            * Use autocomplete: Press TAB
+            * Type the first character and press TAB
+            * If nothing happens, maybe there are multiple choices, press TAB again
+            * If there are indeed multiple choices, type the next character and press TAB
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Examples
+
+            ### Execute a command
+
+            <pre><code data-trim class="bash">
+            $ ssh- TAB
+            > ssh-add      ssh-agent    ssh-keygen   ssh-keyscan
+            $ ssh-k TAB TAB
+            > ssh-keygen   ssh-keyscan
+            $ ssh-keyg TAB
+            > ssh-keygen
+            </code></pre>
+
+            * Huh? That didn't save too many keystrokes?!
+            * Correct! But you can be certain that the command exists!
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Examples
+
+            ### Navigate the file system
+
+            <pre><code data-trim class="bash">
+            $ cd /usr TAB lo TAB l TAB /pyt TAB s TAB
+            # You are in folder /usr/local/lib/python2.7/site-packages/
+            </code></pre>
+
+            * 19 vs. 41 keystrokes?!
+            * Makes sense :)
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Excercise
+
+            1. Type a few characters and press TAB TAB
+            2. See how many commands are available :)
+
+            <br />
+
+            ### Hints
+
+            * Press **CTRL+C** to abort the current command
+            * Type **clear** to clear the screen
+        </script>
+    </section>
 </section>
