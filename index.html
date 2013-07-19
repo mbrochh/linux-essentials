@@ -118,9 +118,9 @@
         <script type="text/template">
             ## Prerequisites
 
-            * Download & Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-            * Download & Install [Vagrant](http://downloads.vagrantup.com/)
-            * Download the [Vagrant box for this course](TODO)
+            * Download & Install <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a>
+            * Download & Install <a href="http://downloads.vagrantup.com/" target="_blank">Vagrant</a>
+            * Download the <a href="#" target="_blank">Vagrant box for this course</a>
         </script>
     </section>
     <section data-markdown data-background="#9d6c5c">
@@ -132,7 +132,7 @@
             <pre><code data-trim class="bash">
             $ vagrant box add precise32 /path/to/your/downloaded/box
             $ vagrant init precise32
-            $ vagrant up 
+            $ vagrant up
             $ vagrant ssh
             </code></pre>
 
@@ -149,7 +149,7 @@
         <script type="text/template">
             ## SSH - "Secure Shell"
 
-            <a href="https://en.wikipedia.org/wiki/Secure_Shell"><blockquote cite="https://en.wikipedia.org/wiki/Secure_Shell">... is a cryptographic network protocol for secure data communication</blockquote></a>
+            <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank"><blockquote cite="https://en.wikipedia.org/wiki/Secure_Shell">... is a cryptographic network protocol for secure data communication</blockquote></a>
 
             * We use it to login to a remote server
             * Standard port is 22
@@ -322,7 +322,7 @@
         <script type="text/template">
             ## Man Pages (Manual pages)
 
-            <a href="https://en.wikipedia.org/wiki/Man_page"><blockquote cite="https://en.wikipedia.org/wiki/Man_page">... is a form of online software documentation usually found on a Unix or Unix-like operating system.</blockquote></a>
+            <a href="https://en.wikipedia.org/wiki/Man_page" target="_blank"><blockquote cite="https://en.wikipedia.org/wiki/Man_page">... is a form of online software documentation usually found on a Unix or Unix-like operating system.</blockquote></a>
 
             * Manuals for most available commands and system calls
             * You can find many [online archives](http://www.freebsd.org/cgi/man.cgi)
@@ -363,12 +363,67 @@
         </script>
     </section>
 </section>
-<section data-markdown data-background="#9d6c5c">
-    <script type="text/template">
-        ## The Command-line Interface
+<section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## The Command-line Interface
 
-        <a href="https://en.wikipedia.org/wiki/Command-line_interface"><blockquote cite="https://en.wikipedia.org/wiki/Command-line_interface">... s a means of interacting with a computer program where the user (or client) issues commands to the program in the form of successive lines of text (command lines).</blockquote></a>
-    </script>
+            <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank"><blockquote cite="https://en.wikipedia.org/wiki/Command-line_interface">... is a means of interacting with a computer program where the user (or client) issues commands to the program in the form of successive lines of text (command lines).</blockquote></a>
+
+            * CLI is a program of your operating system
+            * They are often called **Shell**
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Anatomy of a shell CLI
+
+            <pre><code data-trim class="bash">
+            prompt command option1 .. optionN param1 .. paramN
+            </code></pre>
+
+            * Parameters are also called **Arguments**
+            * Options are also called **Flags**
+
+            <pre><code data-trim class="bash">
+            $ ssh username@hostname -p 2222
+            </code></pre>
+
+            * Help is often built-in
+
+            <pre><code data-trim class="bash">
+            $ ssh -help
+            $ ssh --help
+            </code></pre>
+
+            * Syntax for options may vary per command
+
+            <pre><code data-trim class="bash">
+            $ command -option Foo
+            $ command -option=Foo
+            $ command --option Foo
+            $ command --option=Foo
+            $ command -optionFoo  # I know... this one is weird!
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Excercise
+
+            1. Use the **cat** command to display the content of **~/.bash_logout**
+            2. Use an option to output the line numbers for the file as well
+
+            <br />
+
+            ### Hints
+
+            1. See the manual with **man cat**
+            2. Quit the manual with **q**
+            3. The **~** sign stands for "your home folder"
+            4. Files that start with **.** are hidden files. You can't see them with **ls**
+        </script>
+    </section>
 </section>
 <section data-markdown data-background="#9d6c5c">
     <script type="text/template">
