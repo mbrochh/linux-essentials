@@ -1,5 +1,62 @@
-<section data-markdown data-background="{{ PART1_COLOR }}">
-    <script type="text/template">
-        ## Anatomy of a Shell Command
-    </script>
+<section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## The Command-line Interface
+
+            <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank"><blockquote cite="https://en.wikipedia.org/wiki/Command-line_interface">... is a means of interacting with a computer program where the user (or client) issues commands to the program in the form of successive lines of text (command lines).</blockquote></a>
+
+            * CLI is a program of your operating system
+            * They are often called **Shell**
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Anatomy of a shell CLI
+
+            <pre><code data-trim class="bash">
+            prompt command option1 .. optionN param1 .. paramN
+            </code></pre>
+
+            * Parameters are also called **Arguments**
+            * Options are also called **Flags**
+
+            <pre><code data-trim class="bash">
+            $ ssh username@hostname -p 2222
+            </code></pre>
+
+            * Help is often built-in
+
+            <pre><code data-trim class="bash">
+            $ ssh -help
+            $ ssh --help
+            </code></pre>
+
+            * Syntax for options may vary per command
+
+            <pre><code data-trim class="bash">
+            $ command -option Foo
+            $ command -option=Foo
+            $ command --option Foo
+            $ command --option=Foo
+            $ command -optionFoo  # I know... this one is weird!
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Excercise
+
+            1. Use the **cat** command to display the content of **~/.bash_logout**
+            2. Use an option to output the line numbers for the file as well
+
+            <br />
+
+            ### Hints
+
+            1. See the manual with **man cat**
+            2. Quit the manual with **q**
+            3. The **~** sign stands for "your home folder"
+            4. Files that start with **.** are hidden files. You can't see them with **ls**
+        </script>
+    </section>
 </section>
