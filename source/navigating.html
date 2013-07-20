@@ -1,5 +1,79 @@
-<section data-markdown data-background="{{ PART1_COLOR }}">
-    <script type="text/template">
-        ## Navigating the File System 
-    </script>
+<section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Navigating the File System
+
+            1. Find out where you are with **pwd** (print working directory)
+            2. List files of the current directory with **ls** (list)
+            3. Move into another directory with **cd** (change directory)
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Explore the current directory
+
+            <pre><code data-trim class="bash">
+            $ pwd
+            > /home/vagrant
+
+            $ ls
+            > postinstall.sh  src
+
+            $ ls -1
+            > .  ..  .bash_history  .bash_logout  .bashrc  .cache  .pip  postinstall.sh  .profile  src  .ssh  .sudo_as_admin_successful  .vbox_version  .veewee_version  .vimrc
+
+            $ ls -ahlF
+            > drwxr-xr-t 6 vagrant vagrant 4.0K Jul 14 23:22 ./  # this is the current directory
+            > drwxr-xr-x 3 root    root    4.0K Sep 14  2012 ../  # this is the directory above
+            > -rw------- 1 vagrant vagrant 1.2K Jul 19 06:37 .bash_history  # hidden files start with .
+            > -rwxr-xr-x 1 vagrant vagrant 6.4K Sep 14  2012 postinstall.sh*  # executable files end with *
+            ...
+            </code></pre>
+
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Moving between directories
+
+            ### Many roads lead to Home 
+
+            <pre><code data-trim class="bash">
+            $ cd $HOME  # this is your home folder
+            $ cd ~  # shortcut for your home folder
+            $ cd /home/vagrant/  # absolute path to your home folder
+            </code></pre>
+
+            <br />
+
+            ### cd-ing into other directories
+
+            <pre><code data-trim class="bash">
+            $ cd /  # this is the root folder
+            $ cd /usr/local/bin  # absolute paths start with /
+            $ cd ..  # move one folder up
+            $ cd lib/python2.7/site-packages  # relative paths start without /
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="{{ PART1_COLOR }}">
+        <script type="text/template">
+            ## Excercise 
+
+            1. Start exercise with "**cd ~**"
+            2. Which programs are currently installed in **/user/local/bin**?
+            3. After doing 2., jump back to your **home** directory 
+            4. After doing 3., move back into **/usr/local/bin** using a relative path
+
+            <br />
+
+            ### Hints:
+
+            1. Remember autocomplete!
+            2. Move with **cd**
+            3. Absolute paths start with **/**
+            4. Relative paths start without **/**
+            5. List content of a folder with **ls**
+        </script>
+    </section>
 </section>
