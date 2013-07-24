@@ -474,9 +474,9 @@
     </section>
     <section data-markdown data-background="#9d6c5c">
         <script type="text/template">
-            ## Moving between directories
+            ## Changing directories
 
-            ### Many roads lead to Home 
+            ### Many roads lead to Home
 
             <pre><code data-trim class="bash">
             $ cd $HOME  # this is your home folder
@@ -498,11 +498,11 @@
     </section>
     <section data-markdown data-background="#9d6c5c">
         <script type="text/template">
-            ## Excercise 
+            ## Excercise
 
             1. Start exercise with "**cd ~**"
             2. Which programs are currently installed in **/user/local/bin**?
-            3. After doing 2., jump back to your **home** directory 
+            3. After doing 2., jump back to your **home** directory
             4. After doing 3., move back into **/usr/local/bin** using a relative path
 
             <br />
@@ -522,10 +522,121 @@
         ## File System Hierarchy 
     </script>
 </section>
-<section data-markdown data-background="#9d6c5c">
-    <script type="text/template">
-        ## Creating & Deleting Files
-    </script>
+<section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Creating and removing files
+
+            * Create files with **touch**
+            * Remove files with **rm**
+            * Create directories with **mkdir**
+            * Remove directories with **rmdir** or **rm -rf**
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Creating files
+
+            * Create files with **touch** (change file timestamps)
+            * We are "abusing" this command :)
+            * If the file does not exist, it will be created
+            * If it exists, we don't do any harm, just changing the timestamp
+
+            <pre><code data-trim class="bash">
+            $ touch ~/test
+            $ ls
+            > postinstall.sh  src  test
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Removing files
+
+            * Remove files with **rm** (remove)
+            * Use **-f** to ignore errors
+
+            <pre><code data-trim class="bash">
+            $ rm ~/test
+            > ls postinstall.sh  src
+            $ rm ~/test
+            > rm: cannot remove `test`: No such file or directory
+            $ rm -f ~/test
+            >
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Creating directories
+
+            * Create files with **mkdir** (make directory)
+
+            <pre><code data-trim class="bash">
+            $ mkdir ~/src
+
+            # The following will fail because `test` does not exist
+            $ mkdir ~/src/test/foobar
+            > mkdir: cannot create directory `src/test/foobar`: No such file or directory
+
+            # Use -p flag to prevent errors and create directories as needed
+            $ mkdir -p ~/src/test/foobar
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Deleting directories
+
+            * Delete empty directories with **rmdir** (remove directory)
+            * Delete any directory with **rm -rf**
+            * DANGER: THERE IS NO UNDO!
+
+            <pre><code data-trim class="bash">
+            $ rmdir ~/src
+            > rmdir: failed to remove `src`: Directory not empty
+
+            $ rmdir ~/src/test/foobar
+            $ ls
+            > postinstall.sh  src
+
+            $ rm -rf ~/src
+            > ls postinstall.sh
+            </code></pre>
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Excercise
+
+            1. Create the directory **~/Projects/test/**
+            2. Create a file **README.txt** inside of **~/Projects/test/**
+            3. Remove the file **README.txt**
+            4. Remove the directory **~/src/**
+
+            <br />
+
+            ### Hints
+
+            * Create files with **touch**
+            * Remove files with **rm**
+            * Create directories with **rmdir**
+            * Remove directories with **rm -rf**
+        </script>
+    </section>
+</section>
+<section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Copying & moving files
+
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Excercise
+        </script>
+    </section>
 </section>
 <section data-markdown data-background="#9d6c5c">
     <script type="text/template">
