@@ -5,10 +5,14 @@
 
             <a href="https://en.wikipedia.org/wiki/Symbolic_link" target="_blank"><blockquote cite="https://en.wikipedia.org/wiki/Symbolic_link">... is a special type of file that contains a reference to another file or directory</blockquote></a>
 
-            * create them with **ln -s /path/to/original/file symlink_name**
-            * If you read or write to a symlink, you read or write to the original file
-            * Can point to anything, even if it does not exist
+            * create them with **ln -s**
 
+            <pre><code data-trim class="bash">
+            ln -s /path/to/source/file /path/to/new/symlink
+            </code></pre>
+
+            * If you read or write to a symlink, you read or write to the original file
+            * It can point to anything, even if it does not exist (i.e. external hard drive)
         </script>
     </section>
     <section data-markdown data-background="{{ PART1_COLOR }}">
