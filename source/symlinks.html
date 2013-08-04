@@ -17,8 +17,23 @@
     </section>
     <section data-markdown data-background="{{ PART1_COLOR }}">
         <script type="text/template">
-            ## Excercise
+            ## Symlink Examples
 
+            <pre><code data-trim class="bash">
+            # Create a new file
+            $ touch ~/source_file.txt
+
+            # Now create a symlink pointing to that file
+            $ ln -s ~/source_file.txt ~/symlink_file.txt
+
+            # Now edit and save the symlink
+            $ nano ~/symlink_file.txt
+
+            # Finally open the original source file
+            $ nano ~/source_file.txt
+
+            # You will see that symlink and source file are identical!
+            </code></pre>
         </script>
     </section>
 </section>
