@@ -721,23 +721,63 @@
 
             <a href="https://en.wikipedia.org/wiki/Symbolic_link" target="_blank"><blockquote cite="https://en.wikipedia.org/wiki/Symbolic_link">... is a special type of file that contains a reference to another file or directory</blockquote></a>
 
-            * create them with **ln -s /path/to/original/file symlink_name**
-            * If you read or write to a symlink, you read or write to the original file
-            * Can point to anything, even if it does not exist
+            * create them with **ln -s**
 
+            <pre><code data-trim class="bash">
+            ln -s /path/to/source/file /path/to/new/symlink
+            </code></pre>
+
+            * If you read or write to a symlink, you read or write to the original file
+            * It can point to anything, even if it does not exist (i.e. external hard drive)
         </script>
     </section>
     <section data-markdown data-background="#9d6c5c">
         <script type="text/template">
-            ## Excercise
+            ## Symlink Examples
 
+            <pre><code data-trim class="bash">
+            # Create a new file
+            $ touch ~/source_file.txt
+
+            # Now create a symlink pointing to that file
+            $ ln -s ~/source_file.txt ~/symlink_file.txt
+
+            # Now edit and save the symlink
+            $ nano ~/symlink_file.txt
+
+            # Finally open the original source file
+            $ nano ~/source_file.txt
+
+            # You will see that symlink and source file are identical!
+            </code></pre>
         </script>
     </section>
 </section>
-<section data-markdown data-background="#9d6c5c">
-    <script type="text/template">
-        ## Permissions, Users & Groups
-    </script>
+<section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Permissions, Users & Groups
+
+            <a href="https://en.wikipedia.org/wiki/Filesystem_permissions" target="_blank"><blockquote cite="https://en.wikipedia.org/wiki/Filesystem_permissions">... Linux-based systems [...] have a simple system for managing individual file permissions, which [...] are called "traditional Unix permissions".</blockquote></a>
+
+            * Show permissions with **ls -l**
+
+            <pre><code data-trim class="bash">
+            $ ls -l
+            > -rwxr-xr-x 1 vagrant vagrant 6487 Sep 14  2012 postinstall.sh
+            > drwxrwxr-x 2 vagrant vagrant 4096 Jul 25 09:33 testdir
+            </code></pre>
+
+            * We have three **permission groups**: Owner, Group, All users
+            * We have three **permission types**: Read, Write, Execute
+            * The first bit describes special permissions: None (-), Directory (d), Symbolic link (l)
+        </script>
+    </section>
+    <section data-markdown data-background="#9d6c5c">
+        <script type="text/template">
+            ## Ecercise
+        </script>
+    </section>
 </section>
 <section data-markdown data-background="#9d6c5c">
     <script type="text/template">
